@@ -20,7 +20,6 @@ BuildRequires:	perl(JSON) >= 1
 BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Catalyst::View::JSON is a Catalyst View handler that returns stash
