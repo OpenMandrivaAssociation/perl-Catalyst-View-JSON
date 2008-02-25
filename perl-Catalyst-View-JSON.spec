@@ -14,6 +14,7 @@ URL:		http://search.cpan.org/dist/%{realname}/
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{realname}-%{version}.tar.bz2
 BuildRequires:	perl(Catalyst) >= 5.6
 BuildRequires:	perl(Catalyst::Plugin::Unicode)
+BuildRequires:	perl(YAML)
 BuildRequires:	perl(JSON) >= 1
 BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
