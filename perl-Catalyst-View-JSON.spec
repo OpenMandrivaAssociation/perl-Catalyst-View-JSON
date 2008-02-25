@@ -1,7 +1,7 @@
 %define realname Catalyst-View-JSON
 %define name	perl-%{realname}
 %define modprefix Catalyst
-%define version	0.22
+%define version	0.23
 %define release	%mkrel 1
 
 Name:		%{name}
@@ -12,10 +12,8 @@ License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{realname}/
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{realname}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
 BuildRequires:	perl(Catalyst) >= 5.6
+BuildRequires:	perl(Catalyst::Plugin::Unicode)
 BuildRequires:	perl(JSON) >= 1
 BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
