@@ -1,8 +1,8 @@
 %define realname Catalyst-View-JSON
 %define name	perl-%{realname}
 %define modprefix Catalyst
-%define version	0.24
-%define release	%mkrel 3
+%define version	0.25
+%define release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
