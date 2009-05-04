@@ -18,6 +18,7 @@ BuildRequires:	perl(YAML)
 BuildRequires:	perl(JSON) >= 1
 BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
+BuildRequires:	perl(MRO::Compat)
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}
 
