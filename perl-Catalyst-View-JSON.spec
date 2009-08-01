@@ -1,17 +1,16 @@
-%define realname Catalyst-View-JSON
-%define name	perl-%{realname}
-%define modprefix Catalyst
-%define version	0.25
-%define release	%mkrel 1
+%define upstream_name    Catalyst-View-JSON
+%define upstream_version 0.25
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	JSON view for your data
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{realname}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(Catalyst) >= 5.6
 BuildRequires:	perl(Catalyst::Plugin::Unicode)
 BuildRequires:	perl(YAML)
@@ -20,14 +19,14 @@ BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
 BuildRequires:	perl(MRO::Compat)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Catalyst::View::JSON is a Catalyst View handler that returns stash
 data in JSON format.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -40,12 +39,11 @@ data in JSON format.
 rm -rf %{buildroot}
 %makeinstall_std
 
+%clean
+rm -rf %{buildroot}
+
 %files
 %defattr(-,root,root)
 %doc Changes
 %{_mandir}/*/*
-%{perl_vendorlib}/%{modprefix}
-
-%clean
-rm -rf %{buildroot}
-
+%{perl_vendorlib}/Catalyst
