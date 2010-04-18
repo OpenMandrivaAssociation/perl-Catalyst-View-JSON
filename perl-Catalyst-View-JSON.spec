@@ -11,13 +11,14 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}/
 Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires:	perl(Catalyst) >= 5.6
+BuildRequires:	perl(Catalyst) >= 5.600.0
 BuildRequires:	perl(Catalyst::Plugin::Unicode)
 BuildRequires:	perl(YAML)
 BuildRequires:	perl(JSON) >= 1
 BuildRequires:	perl(JSON::Any)
 BuildRequires:	perl(Test::More) >= 0.32
 BuildRequires:	perl(MRO::Compat)
+
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
@@ -30,10 +31,10 @@ data in JSON format.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%__make
+%make
 
 %check
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
