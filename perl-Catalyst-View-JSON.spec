@@ -1,15 +1,15 @@
 %define upstream_name    Catalyst-View-JSON
-%define upstream_version 0.33
+%define upstream_version 0.37
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	JSON view for your data
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/perl-catalyst/Catalyst-View-JSON
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HAARG/Catalyst-View-JSON-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
