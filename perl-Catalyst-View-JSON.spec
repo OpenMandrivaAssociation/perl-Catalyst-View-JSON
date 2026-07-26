@@ -1,15 +1,13 @@
 %define upstream_name    Catalyst-View-JSON
-%define upstream_version 0.37
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.37
+Release:	2
 
 Summary:	JSON view for your data
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://github.com/perl-catalyst/Catalyst-View-JSON
-Source0:	https://cpan.metacpan.org/authors/id/H/HA/HAARG/Catalyst-View-JSON-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/H/HA/HAARG/Catalyst-View-JSON-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -28,7 +26,7 @@ Catalyst::View::JSON is a Catalyst View handler that returns stash
 data in JSON format.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -78,9 +76,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.250.0-1mdv2010.0
 + Revision: 406310
-- rebuild using %%perl_convert_version
-
-* Mon May 04 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.25-1mdv2010.0
+- rebuild using %0.37 Mon May 04 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.25-1mdv2010.0
 + Revision: 371664
 - update to new version 0.25
 
